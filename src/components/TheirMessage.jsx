@@ -1,5 +1,6 @@
 const TheirMessage= ({lastMessageKey , message}) => {
     const isFirstMessageByUser = !lastMessageKey || lastMessageKey.sender.username !== message.sender.username;
+    var test = message.text.replace(/<[^>]+>/g, '');
 
     return (
         <div className="message-row">
@@ -19,7 +20,7 @@ const TheirMessage= ({lastMessageKey , message}) => {
              />
              ) : (
             <div className="message" style={{float:'right',backgroundColor:'#cabcdc'}}>
-                {message.text}
+                {test}
             </div>
              )
 }
